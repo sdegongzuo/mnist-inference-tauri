@@ -36,6 +36,11 @@ jobs:
       # - name: install frontend dependencies
       #   run:  # change this to npm or pnpm depending on which one you use
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: tauri-renderer
+          path: dist/tauri/
+
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
